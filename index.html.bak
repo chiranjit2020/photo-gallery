@@ -28,7 +28,7 @@
                 <div class="search">
                     <form>
                         <input type="search" class="form-control" placeholder="Search Images...">
-                        <button class="btn btn-dark"><i class='bx bx-search'></i></button>
+                        <button class="btn"><i class='bx bx-search'></i></button>
                     </form>
                 </div>
             </header>
