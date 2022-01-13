@@ -1,0 +1,254 @@
+
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0; 
+}
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: #e9e9e9;
+    padding: 60px;
+    margin: 0;
+}
+.container{
+    max-width: 70%;
+    margin: 0 auto;
+}
+header{
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+header h1{
+    font-size: 3em;
+    color: #0065cb;
+    font-weight: 800;
+    letter-spacing: -2px;
+	margin: 0 0 20px 0;
+}
+
+header .search form{
+    position: relative;
+    width: 400px;
+}
+header .search form .form-control{
+    font-family: inherit;
+    border-radius: 3px;
+    padding: 10px;
+    border: 1px solid #dfdfdf;
+    background: #fff;
+    box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+    width: 100%;
+}
+header .search form .form-control::placeholder{
+    color: #666;
+}
+header .search form .form-control:focus{
+    outline: none;
+}
+header .search form .btn{
+    color: #000;
+    font-size: 20px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+	background: #fff;
+	border: none;
+	outline: none;
+}
+
+
+/*.row{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-flow: row dense;
+    grid-gap: 10px;
+}*/
+
+.row{
+    columns: 3;
+    column-gap: .5em;
+}
+.row > *{ 
+    break-inside: avoid;
+ }
+
+/*.row .col-4 a .card .img-fluid{
+    width: 100%;
+    height: 500px!important;
+    object-fit: cover;
+}*/
+.row .col-4 a .card{
+    margin-bottom: .5em;
+    border-radius: 3px;
+	border: 1px solid #ebebeb;
+	box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+}
+.row .col-4 a .card .img-fluid{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+/*.img-fluid[src*="5"], .img-fluid[src*="7"]{
+    grid-column-end: span 2;
+    grid-row-end: span 2;
+}*/
+
+
+.load-more-section.text-center.mt-5 {
+    text-align: center;
+    margin-top: 3em;
+}
+.load-more{
+    font-family: inherit;
+    font-size: 1em;
+    color: #fff;
+    line-height: 1.3;
+    background-color: #0065cb;
+    border: 1px solid #0065cb;
+    padding: 15px 25px;
+    box-shadow: 0 0 15px rgba(0,0,0,.3);
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+.gallery{
+    border-radius: 10px;
+    background: #fff;
+    backdrop-filter: blur(40px);
+    padding: 30px;             
+}
+.card {
+    line-height: 0;
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.card .card-body{
+    position: absolute;
+    left: 0; 
+    right: 0;
+    bottom: 0px;
+    background-color: rgba(0,101,203,0.7);
+    backdrop-filter: blur(40px);
+    opacity: 0;
+    transition: all .5s ease;
+    padding: 20px;
+}
+
+.card .card-body h5{
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.3;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    text-transform: capitalize;
+}
+
+ .card:hover .card-body{
+    opacity: 1;
+    bottom: 0; 
+ }       
+
+/* Dark Mode CSS */
+.dark{
+    background-color: #0d1d26;
+}
+
+.dark .gallery{
+   background: #071218;
+    box-shadow:  10px 10px 20px #060f14; 
+}
+
+.dark .card{
+   background: #071218;
+    box-shadow:  20px 20px 60px #060f14; 
+}
+
+.dark .gallery header h1{
+    color: #fff;
+}
+
+.dark #check-label{
+    color: #ff9800;
+    cursor: pointer;
+}
+
+@supports (grid-template-rows: masonry ){
+    .row{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: masonry; 
+    }
+
+    .row > *{
+        margin-bottom: 0em;
+    }
+}
+
+.copy{
+    font-size: 14px;
+    color: #ddd;
+    line-height: 1.3;
+    text-align: center;
+    font-weight: 300;
+    padding: 0;
+    margin: 60px 0 0 0;
+}
+
+
+@media only screen and (max-width: 1400px) {
+
+    .container {
+        max-width: 98%;
+        margin: 0 auto;
+    }
+    header {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    body{
+        padding: 30px;
+    }
+    .row {
+        columns: 2;
+        column-gap: .5em;
+    }
+
+}
+
+@media only screen and (max-width: 400px) {
+    body{
+        padding: 30px;
+    }
+    .container{
+        width: 100%;
+    }
+    header h1{
+        font-size: 2em;
+    }
+
+}
+
+@media only screen and (max-width: 350px) {
+    body{
+        padding: 15px;
+    }
+    .container{
+        width: 100%;
+    }
+    .row {
+        columns: 1;
+        column-gap: .5em;
+    }
+
+}
